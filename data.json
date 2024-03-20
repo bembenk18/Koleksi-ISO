@@ -1,0 +1,355 @@
+[
+    {
+        "id": "e60ad996.940e08",
+        "type": "tab",
+        "label": "IoT Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "9029af5bccec2a3f",
+        "type": "group",
+        "z": "e60ad996.940e08",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "70b2e86d.9af4bc",
+            "3c3f510b.9fba5c",
+            "7f99009d7650497f"
+        ],
+        "x": 574,
+        "y": 79,
+        "w": 402,
+        "h": 202
+    },
+    {
+        "id": "5eac07cb929c2c84",
+        "type": "group",
+        "z": "e60ad996.940e08",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "3c306bcf.5085a8",
+            "5df479c96b62720e",
+            "e9ae2e2d72ec5d27",
+            "540bc3d4302e09e3",
+            "0afa45eb49868a52"
+        ],
+        "x": 74,
+        "y": 39,
+        "w": 452,
+        "h": 262
+    },
+    {
+        "id": "3c306bcf.5085a8",
+        "type": "ui_gauge",
+        "z": "e60ad996.940e08",
+        "g": "5eac07cb929c2c84",
+        "name": "Sensor 1",
+        "group": "e3511e063f8676ca",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Gauge Sensor",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 420,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "70b2e86d.9af4bc",
+        "type": "ui_slider",
+        "z": "e60ad996.940e08",
+        "g": "9029af5bccec2a3f",
+        "name": "Actuator",
+        "label": "Actuator",
+        "tooltip": "",
+        "group": "d01db43e.60c078",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "x": 660,
+        "y": 120,
+        "wires": [
+            [
+                "3c3f510b.9fba5c",
+                "7f99009d7650497f"
+            ]
+        ]
+    },
+    {
+        "id": "3c3f510b.9fba5c",
+        "type": "ui_gauge",
+        "z": "e60ad996.940e08",
+        "g": "9029af5bccec2a3f",
+        "name": "Actuator Gauge",
+        "group": "d01db43e.60c078",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Actuator Gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 870,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7f99009d7650497f",
+        "type": "ui_chart",
+        "z": "e60ad996.940e08",
+        "g": "9029af5bccec2a3f",
+        "name": "Sensor Data",
+        "group": "d01db43e.60c078",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "label": "Actuator Chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 880,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5df479c96b62720e",
+        "type": "inject",
+        "z": "e60ad996.940e08",
+        "g": "5eac07cb929c2c84",
+        "name": "Sensor 1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "14",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "3c306bcf.5085a8",
+                "e9ae2e2d72ec5d27"
+            ]
+        ]
+    },
+    {
+        "id": "e9ae2e2d72ec5d27",
+        "type": "ui_chart",
+        "z": "e60ad996.940e08",
+        "g": "5eac07cb929c2c84",
+        "name": "Sensor Data",
+        "group": "e3511e063f8676ca",
+        "order": 1,
+        "width": "6",
+        "height": "5",
+        "label": "Sensor Chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 430,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "540bc3d4302e09e3",
+        "type": "inject",
+        "z": "e60ad996.940e08",
+        "g": "5eac07cb929c2c84",
+        "name": "Sensor 2",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "19",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "30",
+        "payloadType": "num",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "3c306bcf.5085a8",
+                "e9ae2e2d72ec5d27"
+            ]
+        ]
+    },
+    {
+        "id": "0afa45eb49868a52",
+        "type": "inject",
+        "z": "e60ad996.940e08",
+        "g": "5eac07cb929c2c84",
+        "name": "Sensor 3",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "24",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "50",
+        "payloadType": "num",
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "3c306bcf.5085a8",
+                "e9ae2e2d72ec5d27"
+            ]
+        ]
+    },
+    {
+        "id": "e3511e063f8676ca",
+        "type": "ui_group",
+        "name": "Sensor",
+        "tab": "4b3f1987.0b9e14",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d01db43e.60c078",
+        "type": "ui_group",
+        "name": "Actuator",
+        "tab": "4b3f1987.0b9e14",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4b3f1987.0b9e14",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
